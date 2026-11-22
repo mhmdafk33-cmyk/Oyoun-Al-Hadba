@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة عيون الحدباء للمقاولات | Oyoun Al-Hadba Co.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #F5B800;
+            --primary-dark: #D49E00;
+            --dark: #1A1D24;
+            --dark-light: #262A34;
+            --light: #F4F6F9;
+            --white: #FFFFFF;
+            --text: #333333;
+            --text-muted: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cairo', 'Roboto', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        html[lang="ar"] .en { display: none !important; }
+        html[lang="en"] .ar { display: none !important; }
+        html[lang="en"] body { font-family: 'Roboto', sans-serif; }
+
+        header {
+            background-color: var(--dark);
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo span {
+            font-size: 0.75rem;
+            color: var(--white);
+            font-weight: 400;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        .lang-btn {
+            background-color: var(--primary);
+            color: var(--dark);
+            border: none;
+            padding: 6px 15px;
+            border-radius: 5px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.3s;
+        }
+
+        .lang-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(26, 29, 36, 0.88), rgba(26, 29, 36, 0.92)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1600&q=80') center/cover;
+            color: var(--white);
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 900;
+        }
+
+        .hero p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.2rem;
+            color: #E0E0E0;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(245, 184, 0, 0.4);
+            padding: 20px 30px;
+            border-radius: 8px;
+            min-width: 200px;
+        }
+
+        .stat-box h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        section {
+            padding: 70px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            width: 60%;
+            height: 4px;
+            background: var(--primary);
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+            border-top: 4px solid var(--primary);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .quote-box {
+            background: var(--dark);
+            color: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            border-right: 6px solid var(--primary);
+            border-left: 6px solid var(--primary);
+        }
+
+        .quote-box h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .chairman-name {
+            margin-top: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        /* Equipment List with Inline Image */
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 15px;
+        }
+
+        .eq-item {
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .eq-img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .eq-body {
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 0.92rem;
+        }
+
+        .eq-badge {
+            background: var(--primary);
+            color: var(--dark);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 900;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        /* Projects List with Inline Image */
+        .project-item {
+            background: var(--white);
+            padding: 16px 20px;
+            margin-bottom: 14px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .proj-num {
+            background: var(--dark);
+            color: var(--primary);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .proj-img {
+            width: 130px;
+            height: 85px;
+            object-fit: cover;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+
+        .proj-text {
+            flex: 1;
+            min-width: 220px;
+            font-weight: 600;
+        }
+
+        .dark-section {
+            background-color: var(--dark);
+            color: var(--white);
+            max-width: 100%;
+            padding: 70px 20px;
+        }
+
+        .dark-section .inner {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .dark-section .section-title h2 {
+            color: var(--white);
+        }
+
+        .dark-card {
+            background: var(--dark-light);
+            padding: 25px;
+            border-radius: 8px;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .dark-card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #111318;
+            color: #CCCCCC;
+            padding: 50px 20px 20px;
+            border-top: 4px solid var(--primary);
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-grid h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #2A2E39;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero h1 { font-size: 2rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .proj-img { width: 100%; height: 170px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="ar" style="font-size:1.3rem; color:var(--primary); font-weight:900;">عيون الحدباء</span>
+                <span class="en" style="font-size:1.3rem; color:var(--primary); font-weight:900;">OYOUN AL-HADBA</span>
+                <span class="ar">للمقاولات والتجارة العامة والخدمات النفطية</span>
+                <span class="en">Contracting, General Trade & Oil Services</span>
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="#about"><span class="ar">من نحن</span><span class="en">About Us</span></a></li>
+                    <li><a href="#services"><span class="ar">خدماتنا</span><span class="en">Services</span></a></li>
+                    <li><a href="#equipment"><span class="ar">المعدات</span><span class="en">Equipment</span></a></li>
+                    <li><a href="#projects"><span class="ar">المشاريع</span><span class="en">Projects</span></a></li>
+                    <li><a href="#qms"><span class="ar">الجودة والسلامة</span><span class="en">QMS & HSE</span></a></li>
+                    <li><a href="#contact"><span class="ar">تواصل معنا</span><span class="en">Contact</span></a></li>
+                </ul>
+            </nav>
+
+            <button class="lang-btn" onclick="toggleLang()">
+                <span class="ar">English</span>
+                <span class="en">عربي</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1 class="ar">شركة عيون الحدباء للمقاولات العامة المحدودة</h1>
+        <h1 class="en">OYOUN AL-HADBA GENERAL CONTRACTING CO. LTD</h1>
+        
+        <p class="ar">للمقاولات والتجارة العامة والنقل العام والخدمات النفطية والبحرية والشحن والتفريغ</p>
+        <p class="en">For Contracting, General Trade, Public Transport, Oil and Marine Services, Shipping and Discharging</p>
+
+        <div class="stats-bar">
+            <div class="stat-box">
+                <h3>2009</h3>
+                <p class="ar">سنة التأسيس</p>
+                <p class="en">Established</p>
+            </div>
+            <div class="stat-box">
+                <h3 class="ar">5 مليار دينار</h3>
+                <h3 class="en">5 Billion IQD</h3>
+                <p class="ar">رأس المال الحالي</p>
+                <p class="en">Current Capital</p>
+            </div>
+            <div class="stat-box">
+                <h3 class="ar">درجة أولى</h3>
+                <h3 class="en">1st Class</h3>
+                <p class="ar">تصنيف إنشائي (وخامس كهرباء)</p>
+                <p class="en">Construction Rating (5th Electrical)</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="about">
+        <div class="section-title">
+            <h2 class="ar">نبذة عن الشركة</h2>
+            <h2 class="en">About Company</h2>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 40px;">
+            <div class="card">
+                <h3 class="ar">التأسيس والخبرة</h3>
+                <h3 class="en">Establishment & Experience</h3>
+                <p class="ar">تأسست شركة عيون الحدباء في بغداد بموجب قانون الشركات رقم 21 لسنة 1997. تعتبر من الشركات العراقية المتميزة في مجال الأعمال الإنشائية والطرق والمباني وتصميم المشاريع والأعمال الكهربائية والميكانيكية والخدمات النفطية والنقل العام، بخبرة تمتد لأكثر من 10 سنوات وكوادر هندسية وفنية متكاملة.</p>
+                <p class="en">Oyoun Al-Hadba Company was established in Baghdad according to the Companies Law No. 21 for the year 1997. Considered one of the distinguished Iraqi companies in roads, construction, building, project design, electrical & mechanical works, oil services, and project management with over 10 years of experience.</p>
+            </div>
+
+            <div class="card">
+                <h3 class="ar">الرؤية والمهمة</h3>
+                <h3 class="en">Vision & Mission</h3>
+                <p class="ar"><strong>رؤيتنا:</strong> أن نكون المقاول الأنسب في مجال البناء والمقاولات للأعمال المشتركة والصناعية والجسور والأعمال الكهروميكانيكية في العراق ككل.</p>
+                <p class="en"><strong>Vision:</strong> To be the most appropriate contractor in construction, industrial, bridges, and electro-mechanical works across Iraq.</p>
+                <br>
+                <p class="ar"><strong>مهمتنا:</strong> تقديم مشاريع عالية الجودة بأعلى المعايير وأقل مدة زمنية لتلبية رضا عملائنا.</p>
+                <p class="en"><strong>Mission:</strong> Introducing quality projects with highest standards and least duration to meet our clients' satisfaction.</p>
+            </div>
+        </div>
+
+        <div class="quote-box">
+            <h3 class="ar">كلمة المدير المفوض</h3>
+            <h3 class="en">Managing Director / Chairman Message</h3>
+            <p class="ar">"تعمل شركة عيون الحدباء منذ تأسيسها عام 2009 في البصرة، وخلال هذه الفترة نالت سمعة متميزة في تنفيذ المشاريع بأعلى مستويات التكنولوجيا والجودة والتسليم السريع. لقد توسعت أنشطتنا لتشمل المقاولات العامة، المدنية، الكهرباء، الطرق، الخرسانة الجاهزة ومسبقة الصب، بناء الكرفانات، وتأجير الآليات، لنتحول من شركة صغيرة إلى مؤسسة رائدة تواكب النهضة في عراقنا الحبيب."</p>
+            <p class="en">"Since its foundation in 2009 in Basra, Oyoun Al-Hadba Company has won a reputation for excellence in project implementation with high technology, quality, and fast delivery. We have expanded across General Contracting, Civil, Electrical, Roads, Pre-Cast & Ready Concrete, Caravans, and Machinery Rental, growing into a major establishment serving Iraq's renaissance."</p>
+            <div class="chairman-name ar">إحسان فالح حسين — المدير المفوض</div>
+            <div class="chairman-name en">Ihsan Falih Hussein / Hissan H. Hussain — Managing Director</div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="section-title">
+            <h2 class="ar">خدماتنا التخصصية</h2>
+            <h2 class="en">Our Specialized Services</h2>
+        </div>
+
+        <div class="grid-3">
+            <div class="card">
+                <h3 class="ar">الأعمال الإنشائية (Construction)</h3>
+                <h3 class="en">Construction Works</h3>
+                <p class="ar">التصميم الهندسي للبنايات وأرصفة الموانئ، تركيب المرافق الهندسية، تصنيع وتشغيل المنصات، تنظيف وإصلاح الخزانات، ودعم منشآت النفط والغاز والموانئ والسقالات البحرية.</p>
+                <p class="en">Front End Engineering Design, installation of engineering facilities, platform & process equipment fabrication, tank cleaning/repair, and support for Oil Terminals, Gas Plants, and Jetties.</p>
+            </div>
+
+            <div class="card">
+                <h3 class="ar">الأعمال الكهربائية (Electricity)</h3>
+                <h3 class="en">Electrical Works</h3>
+                <p class="ar">تصميم وتوريد وبناء واختبار وتشغيل المحطات الفرعية ذات الجهد العالي والمتوسط وتعديل أنظمة التحكم بأعلى معايير الدقة والموثوقية.</p>
+                <p class="en">Design, supply, construction, testing, and commissioning of high and medium voltage substations and modification of control systems.</p>
+            </div>
+
+            <div class="card">
+                <h3 class="ar">الأعمال الميكانيكية (Mechanical)</h3>
+                <h3 class="en">Mechanical Works</h3>
+                <p class="ar">التركيبات الميكانيكية والصيانة السريعة للمنشآت الصناعية، وتخطيط وتنفيذ المشاريع الميكانيكية بأعلى كفاءة وأقل تكلفة تشغيلية.</p>
+                <p class="en">Mechanical installations and rapid maintenance for industrial facilities, planning and executing cost-effective engineering solutions.</p>
+            </div>
+
+            <div class="card">
+                <h3 class="ar">الخدمات البحرية (Marine Services)</h3>
+                <h3 class="en">Marine Services</h3>
+                <p class="ar">الدعم اللوجستي البحري (زوارق سحب، بارجات، قوارب إمداد وأمن، غواصين) وخدمات الفحص والإصلاح تحت الماء (IRM) وتنظيف ولحام هياكل السفن.</p>
+                <p class="en">Offshore logistics support (Barges, Tug boats, Supply & Security vessels, Divers) and underwater IRM (Hull cleaning, welding repairs, propeller polishing).</p>
+            </div>
+
+            <div class="card">
+                <h3 class="ar">خدمات النفط والغاز (Oil & Gas)</h3>
+                <h3 class="en">Oil & Gas Services</h3>
+                <p class="ar">حفر الآبار الاستكشافية والتطويرية، استصلاح الآبار، مد ولحام الأنابيب (TIG, SMAW, SAW)، الفحوصات اللاإتلافية (NDT)، صيانة الصمامات، ومحطات معالجة المياه.</p>
+                <p class="en">Vertical & directional drilling, well workover, piping & welding works, NDT testing, valves maintenance, and Water & Waste Treatment Plants (WTP/WWTP).</p>
+            </div>
+
+            <div class="card">
+                <h3 class="ar">النقل العام والشحن (Transportation)</h3>
+                <h3 class="en">General Transportation</h3>
+                <p class="ar">نقل وتخليص البضائع والآليات من جميع الموانئ والمطارات، تأجير شاحنات اللوبد للمعدات الثقيلة، الشاحنات المبردة، وصهاريج الوقود والمواد الكيميائية.</p>
+                <p class="en">Air, maritime, and land shipping & customs clearance, heavy equipment low-bed trailers, refrigerated trucks, and fuel/chemical tankers rental.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="equipment">
+        <div class="section-title">
+            <h2 class="ar">أسطول الآليات والمعدات</h2>
+            <h2 class="en">Our Equipment Fleet</h2>
+        </div>
+
+        <div class="equipment-grid" id="equipment-list"></div>
+    </section>
+
+    <section id="projects">
+        <div class="section-title">
+            <h2 class="ar">أبرز المشاريع المنجزة</h2>
+            <h2 class="en">Executed Projects</h2>
+        </div>
+
+        <div id="projects-list"></div>
+    </section>
+
+    <div class="dark-section" id="qms">
+        <div class="inner">
+            <div class="section-title">
+                <h2 class="ar">الجودة والصحة والسلامة المهنية (QMS & HSE)</h2>
+                <h2 class="en">Quality Management & HSE Plans</h2>
+            </div>
+
+            <div class="grid-3">
+                <div class="dark-card">
+                    <h3 class="ar">الوقاية والسلامة في المواقع</h3>
+                    <h3 class="en">On-Site Safety & Prevention</h3>
+                    <p class="ar">تلتزم إدارة الشركة بمنع الحوادث وحماية الأفراد والمعدات والبيئة عبر تطبيق خطط السلامة الصارمة، والتدريب المستمر، والتقارير الشهرية لساعات العمل.</p>
+                    <p class="en">Committed to preventing accidents, equipment damage, and protecting health & environment through strict site safety regulations and monthly reporting.</p>
+                </div>
+
+                <div class="dark-card">
+                    <h3 class="ar">نظام إدارة الجودة (QMS)</h3>
+                    <h3 class="en">Quality Management System</h3>
+                    <p class="ar">تطبيق معايير الجودة الشاملة لتحقيق مبدأ "صفر عيوب وصفر شكاوى"، وتسليم المشاريع مطابقة للمواصفات الهندسية والتعاقدية في الوقت المحدد.</p>
+                    <p class="en">Implementing QMS principles focusing on customer satisfaction, process approach, continuous improvement, and faultless on-time delivery.</p>
+                </div>
+
+                <div class="dark-card">
+                    <h3 class="ar">الاعتمادات والعضويات الرسمية</h3>
+                    <h3 class="en">Official Registrations</h3>
+                    <p class="ar">مسجلة لدى وزارة التخطيط (هوية رقم 1476 - درجة أولى إنشائي)، غرفة تجارة بغداد (الصنف الممتاز)، واتحاد الناقلين العراقيين.</p>
+                    <p class="en">Registered with Ministry of Planning (ID 1476 - 1st Class), Baghdad Chamber of Commerce (Excellent Class), and Iraqi Union of Transporters.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <div class="footer-grid">
+            <div>
+                <h4 class="ar">شركة عيون الحدباء</h4>
+                <h4 class="en">Oyoun Al-Hadba Co.</h4>
+                <p class="ar">شركة محدودة المسؤولية متخصصة في المقاولات العامة، التجارة، النقل، والخدمات النفطية والبحرية في عموم العراق.</p>
+                <p class="en">Limited Liability Company specialized in General Contracting, Trade, Transport, Oil & Marine Services across Iraq.</p>
+            </div>
+
+            <div>
+                <h4 class="ar">مواقع المكاتب</h4>
+                <h4 class="en">Office Locations</h4>
+                <p class="ar"><strong>المقر الرئيسي:</strong> بغداد - الكرادة</p>
+                <p class="en"><strong>Head Office:</strong> Baghdad - Al Karada</p>
+                <br>
+                <p class="ar"><strong>فرع البصرة:</strong> العراق - البصرة - العشار - شارع الاستقلال</p>
+                <p class="en"><strong>Basra Branch:</strong> Iraq - Basrah - Al-Estqlal St.</p>
+            </div>
+
+            <div>
+                <h4 class="ar">معلومات التواصل</h4>
+                <h4 class="en">Contact Information</h4>
+                <p dir="ltr" style="text-align: right;" class="ar">📞 (+964) 780 104 1426</p>
+                <p dir="ltr" style="text-align: right;" class="ar">📞 (+964) 772 120 6095</p>
+                <p dir="ltr" style="text-align: right;" class="ar">📞 (+964) 780 142 2226</p>
+                <p class="en">📞 (+964) 780 104 1426</p>
+                <p class="en">📞 (+964) 772 120 6095</p>
+                <p class="en">📞 (+964) 780 142 2226</p>
+                <p>✉️ Omarfraih57@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <span class="ar">© جميع الحقوق محفوظة لشركة عيون الحدباء للمقاولات العامة المحدودة</span>
+            <span class="en">© All Rights Reserved - Oyoun Al-Hadba General Contracting Co. Ltd.</span>
+        </div>
+    </footer>
+
+    <script>
+        const equipmentData = [
+            { count: "6", img: "images/eq-loaders.jpg", en: "Front-End Loaders", ar: "شفلات (Front-End Loaders)" },
+            { count: "4", img: "images/eq-graders.jpg", en: "Graders", ar: "كريدرات تسوية (Graders)" },
+            { count: "4", img: "images/eq-bulldozers.jpg", en: "Bulldozers", ar: "بلدوزرات (Bulldozers)" },
+            { count: "14", img: "images/eq-compactors.jpg", en: "Compactors & Glove Compactors", ar: "حادلات ترابية وأسفلتية" },
+            { count: "15", img: "images/eq-trucks.jpg", en: "Wheel & Tug Dump Trucks", ar: "شاحنات قلاب متنوعة" },
+            { count: "4", img: "images/eq-excavators.jpg", en: "Hitachi Excavators", ar: "حفارات هيتاشي (Excavators)" },
+            { count: "4", img: "images/eq-water.jpg", en: "Water Tankers (16k & 36k Liters)", ar: "صهاريج مياه (16 و 36 ألف لتر)" },
+            { count: "2", img: "images/eq-fuel.jpg", en: "Fuel Tankers (36,000 Liters)", ar: "صهاريج وقود (36,000 لتر)" },
+            { count: "9", img: "images/eq-cranes.jpg", en: "Cranes (20 to 250 Ton)", ar: "رافعات (من 20 إلى 250 طن)" },
+            { count: "6", img: "images/eq-hiab.jpg", en: "HIAB Cranes (2T, 5T, 10T)", ar: "كرينات هياب (2، 5، 10 طن)" },
+            { count: "3", img: "images/eq-manlift.jpg", en: "Manlifts (25m to 30m)", ar: "رافعات أفراد (من 25 إلى 30 متر)" },
+            { count: "9", img: "images/eq-tankers.jpg", en: "Rubbish & Sewage Tankers", ar: "سيارات نفايات وصهاريج صرف" },
+            { count: "11", img: "images/eq-trailers.jpg", en: "Box Trucks & Flat Trailers", ar: "شاحنات صندوقية وتريلات مسطحة" },
+            { count: "4", img: "images/eq-heavy-loaders.jpg", en: "Heavy Loaders 100 Ton", ar: "لودرات ثقيلة 100 طن" },
+            { count: "4", img: "images/eq-forklifts.jpg", en: "Forklifts (5T & 10T)", ar: "رافعات شوكية (5 و 10 طن)" },
+            { count: "20", img: "images/eq-welding.jpg", en: "Welding Machines & Air Compressors", ar: "مكائن لحام وضواغط هواء" },
+            { count: "10", img: "images/eq-small-trucks.jpg", en: "Small Size Trucks", ar: "شاحنات نقل صغيرة" },
+            { count: "2", img: "images/eq-asphalt.jpg", en: "Asphalt Factories (200 m³/hr)", ar: "معامل أسفلت (طاقة 200 م³/ساعة)" },
+            { count: "27", img: "images/eq-mixers.jpg", en: "Central Concrete Mixers", ar: "خباطة خرسانة مركزية" },
+            { count: "4", img: "images/eq-pumps.jpg", en: "Concrete Pumps", ar: "مضخات خرسانة" }
+        ];
+
+        const projectsData = [
+            { img: "images/proj-stadium.jpg", ar: "إنشاء ساحة مليئة بالثيل الصناعي مع المدرجات وملحقاتها في الصويرة / واسط", en: "Construction of an artificial turf stadium with stands in Al-Suwaira / Wasit" },
+            { img: "images/proj-road-diwaniyah.jpg", ar: "إنشاء طريق مهناوية - جبور في المهناوية / الديوانية", en: "Construction of Mahnawiyah-Jabbour Road in Al-Mahnawiyah / Diwaniyah" },
+            { img: "images/proj-road-diwaniyah.jpg", ar: "أعمال ترابية وفرش سبيس وطبقتين بالبرايمكوت وتبليط طريق الحمزة - الناطور / الديوانية", en: "Earthworks, sub-base, primer layers, and paving of Al Hamza - Al Natour Road / Diwaniyah" },
+            { img: "images/proj-anbar.jpg", ar: "تأهيل وتبليط شوارع في حي الخلفاء وحي الأمين / الأنبار", en: "Rehabilitation and paving of streets in Hay Al-Khulafa and Hay Al-Amin / Anbar" },
+            { img: "images/proj-anbar.jpg", ar: "تأهيل شارع نهر التميمي في الكرمة / الأنبار", en: "Rehabilitation of Tamimi River Street in Karma / Anbar" },
+            { img: "images/proj-ummqasr.jpg", ar: "صيانة وإعادة تأهيل سقائف خزن تابعة لشركة اللورين (أرصفة 14، 15) في ميناء أم قصر الشمالي", en: "Maintenance and rehabilitation of storage sheds for Lorraine Co. (Berths 14, 15) in North Umm Qasr Port" },
+            { img: "images/proj-khor-zubair.jpg", ar: "إنشاء واجهة بحرية في رصيف 12 لصالح شركة الدويب في ميناء خور الزبير", en: "Construction of a waterfront at Berth 12 for Al-Duwaib Co. in Khor Al-Zubair Port" },
+            { img: "images/proj-ummqasr.jpg", ar: "أعمال الرشق الكونكريتي لواجهة الأرصفة (12، 13، 14، 15) التابعة لشركة اللورين في ميناء أم قصر الشمالي", en: "Concrete shotcrete waterfront works for Berths 12-15 (Lorraine Co.) in North Umm Qasr Port" },
+            { img: "images/proj-khor-zubair.jpg", ar: "إنشاء 4 مرابط دولفين بطاقة 120 طن مع الجسور الحديدية الرابطة - رصيف 12 ميناء خور الزبير", en: "Construction of 4 dolphin terminals (120-ton capacity) with iron bridges at Berth 12, Khor Al-Zubair Port" },
+            { img: "images/proj-khor-zubair.jpg", ar: "تثبيت فنادر ومصدات بحرية لواجهة الأرصفة 2، 3، 4 لشركة SKA في ميناء خور الزبير", en: "Installing marine fenders and waterfront works for Berths 2, 3, 4 (SKA Co.) in Khor Al-Zubair Port" },
+            { img: "images/proj-ummqasr.jpg", ar: "إزالة الركائز القديمة للرصيف الخدمي ضمن رصيف 22 التابع لشركة اللورين في ميناء أم قصر الشمالي", en: "Removal of old pillars of service berth within Berth 22 (Lorraine Co.) in North Umm Qasr Port" },
+            { img: "images/proj-piling.jpg", ar: "أعمال حفر ركائز البور بايل وتسليح وصب قواعد الخزانات النفطية لصالح شركة الدويب / خور الزبير", en: "Bored piling works, reinforcement, and casting of oil storage tank foundations for Al-Duwaib Co." },
+            { img: "images/proj-schools.jpg", ar: "تجهيز أثاث للمراكز الصحية في محافظة الديوانية", en: "Supplying furniture to health centers in Al-Diwaniyah Governorate" },
+            { img: "images/proj-oil-housing.jpg", ar: "بناء مجمعات سكنية مع المخازن لصالح شركة الأحدب النفطية في محافظة واسط", en: "Construction of housing complexes with warehouses for Al-Ahdab Oil Co. in Wasit Governorate" },
+            { img: "images/proj-schools.jpg", ar: "إعادة تأهيل المركز الفرنسي", en: "Rehabilitation of the French Center" },
+            { img: "images/proj-schools.jpg", ar: "إعادة تأهيل 20 مدرسة في محافظة ديالى", en: "Rehabilitation of 20 schools in Diyala Governorate" },
+            { img: "images/proj-oil-housing.jpg", ar: "نصب شبكة كهرباء في محافظة واسط تابعة لشركة نفط واسط مع شركة الأحدب النفطية", en: "Installing electricity network in Wasit Governorate for Wasit Oil Co. & Al-Ahdab Oil Co." },
+            { img: "images/proj-oil-housing.jpg", ar: "نصب شبكة كهرباء في محافظة ديالى (قرى السلام - علي الهادي - خفاجة)", en: "Installing electricity network in Diyala Governorate (Al-Salam, Ali Al-Hadi, Khafaja)" },
+            { img: "images/proj-caravans.jpg", ar: "تصميم وتنفيذ وتجهيز كرفانات للقطاعين الخاص والعام وتنفيذ عقود نقل الوقود والمشتقات النفطية", en: "Design, manufacturing, and supply of caravans, and execution of fuel & oil transport contracts" }
+        ];
+
+        function renderLists() {
+            const eqContainer = document.getElementById('equipment-list');
+            eqContainer.innerHTML = equipmentData.map(item => `
+                <div class="eq-item">
+                    <img class="eq-img" src="${item.img}" alt="${item.en}" onerror="this.style.display='none'">
+                    <div class="eq-body">
+                        <span class="eq-badge">${item.count}</span>
+                        <span class="ar">${item.ar}</span>
+                        <span class="en">${item.en}</span>
+                    </div>
+                </div>
+            `).join('');
+
+            const projContainer = document.getElementById('projects-list');
+            projContainer.innerHTML = projectsData.map((proj, index) => `
+                <div class="project-item">
+                    <div class="proj-num">${index + 1}</div>
+                    <img class="proj-img" src="${proj.img}" alt="${proj.en}" onerror="this.style.display='none'">
+                    <div class="proj-text">
+                        <span class="ar">${proj.ar}</span>
+                        <span class="en">${proj.en}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleLang() {
+            const html = document.documentElement;
+            if (html.getAttribute('lang') === 'ar') {
+                html.setAttribute('lang', 'en');
+                html.setAttribute('dir', 'ltr');
+            } else {
+                html.setAttribute('lang', 'ar');
+                html.setAttribute('dir', 'rtl');
+            }
+        }
+
+        renderLists();
+    </script>
+</body>
+</html>
